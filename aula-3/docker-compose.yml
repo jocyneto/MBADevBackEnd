@@ -1,6 +1,12 @@
-version: '3'
+version: "3.4"
+
 services:
-  app:
-    build: .
+  dev-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./aula:/app
+      - "./aula:/src"
+    ports:
+      - "8000:8000"
+      - "4000:4000"
